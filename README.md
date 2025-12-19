@@ -4,18 +4,19 @@ A Qt-inspired calculator implemented in Python. The calculator can evaluate
 simple arithmetic expressions, supports percentage values, and now includes a Qt
 GUI built with PyQt6.
 
-## Usage
+## Usage (GUI)
 
 ### Library
 
 ```
-python - <<'PY'
-from src.calculator import Calculator
 
-calc = Calculator()
-print(calc.calculate("200 * 10%"))  # 20.0
-print(calc.calculate("100 + 5%"))   # 100.05
-PY
+Type expressions directly into the display (or use the on-screen buttons) and
+press **Enter** or click **=** to evaluate.
+
+Alternatively, you can launch the window with:
+
+```
+python -m src.gui
 ```
 
 ### Qt GUI
