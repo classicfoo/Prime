@@ -48,7 +48,7 @@ class CalculatorWindow(QWidget):
     def __init__(self) -> None:
         super().__init__()
         self.calculator = Calculator()
-        self.setWindowTitle("Qt Calculator")
+        self.setWindowTitle("Prime")
 
         self.display = QLineEdit()
         self.display.setReadOnly(True)
