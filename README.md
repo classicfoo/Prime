@@ -12,6 +12,9 @@ Run the calculator as a desktop application:
 python calculator.py
 ```
 
+Type expressions directly into the display (or use the on-screen buttons) and
+press **Enter** or click **=** to evaluate.
+
 Alternatively, you can launch the window with:
 
 ```

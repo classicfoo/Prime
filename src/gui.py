@@ -48,20 +48,22 @@ class CalculatorWindow(QWidget):
     def __init__(self) -> None:
         super().__init__()
         self.calculator = Calculator()
-        self.setWindowTitle("Prime")
+        self.setWindowTitle("Qt Calculator")
 
         self.display = QLineEdit()
-        self.display.setReadOnly(True)
         self.display.setAlignment(Qt.AlignmentFlag.AlignRight)
         self.display.setPlaceholderText("Enter expression…")
         self.display.setFixedHeight(40)
         self.display.setStyleSheet("font-size: 18px; padding: 6px;")
+        self.display.returnPressed.connect(self._evaluate)
 
         buttons_layout = self._create_buttons()
         layout = QVBoxLayout()
         layout.addWidget(self.display)
         layout.addLayout(buttons_layout)
         self.setLayout(layout)
+
+        self.display.setFocus()
 
     def _create_buttons(self) -> QGridLayout:
         grid = QGridLayout()
@@ -71,6 +73,7 @@ class CalculatorWindow(QWidget):
             button = QPushButton(text)
             button.setFixedHeight(50)
             button.setStyleSheet("font-size: 16px;")
+            button.setFocusPolicy(Qt.FocusPolicy.NoFocus)
             if text == "=":
                 grid.addWidget(button, row, column, 1, 4)
                 button.clicked.connect(self._evaluate)
